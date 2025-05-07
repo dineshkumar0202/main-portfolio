@@ -1,33 +1,41 @@
 import React, { useState } from "react";
-import Logo from "../assets/profile_logo1.png"; // Adjust the path as necessary
+import Logo from "../assets/profile_logo1.png"; // Adjust path if needed
 import "../App.css";
 
-export default function Navbar() {
+function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
   return (
-<>
-    <div className="logo-container" >
+    <>
+      <div className="logo-container">
         <img src={Logo} alt="Logo" className="logo" />
-        {/* <span className="logo-text">MyApp</span> */}
       </div>
-    <nav className="navbar">
       
-      <div className="menu-toggle" onClick={toggleMenu}>
-        <div className={`bar ${isOpen ? "open" : ""}`}></div>
-        <div className={`bar ${isOpen ? "open" : ""}`}></div>
-        <div className={`bar ${isOpen ? "open" : ""}`}></div>
-      </div>
+      <nav className="navbar">
+        <button
+          className="menu-toggle"
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+          aria-expanded={isOpen}
+          aria-controls="nav-links"
+        >
+          <div className={`bar ${isOpen ? "open" : ""}`}></div>
+          <div className={`bar ${isOpen ? "open" : ""}`}></div>
+          <div className={`bar ${isOpen ? "open" : ""}`}></div>
+        </button>
 
-      <div className={`nav-links ${isOpen ? "active" : ""}`}>
-        <a href="#" onClick={() => setIsOpen(false)}>Home</a>
-        <a href="#" onClick={() => setIsOpen(false)}>About</a>
-        <a href="#" onClick={() => setIsOpen(false)}>Services</a>
-        <a href="#" onClick={() => setIsOpen(false)}>Contact</a>
-      </div>
-    </nav>
+        <div id="nav-links" className={`nav-links ${isOpen ? "active" : ""}`}>
+          <a href="#" onClick={closeMenu}>Home</a>
+          <a href="#" onClick={closeMenu}>About</a>
+          <a href="#" onClick={closeMenu}>Services</a>
+          <a href="#" onClick={closeMenu}>Contact</a>
+        </div>
+      </nav>
     </>
   );
 }
+
+export default Navbar;

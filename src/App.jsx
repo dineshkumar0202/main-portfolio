@@ -1,19 +1,28 @@
-import { useState } from 'react'  
-import './App.css'
-import Navbar from './Components/NavBar.jsx';
-import Clock from './Components/Clock.jsx';   
+import { useState } from 'react';
+import './App.css';
+import Navbar from './Components/Navbar.jsx';
+import Clock from './Components/Clock.jsx';
 import SplashCursor from './Components/SplashCursor.jsx';
-// import AnimatedContent from './Components/AnimatedContent.jsx';
+import Header from './Components/Header.jsx';
+import Orb from './Components/Orb.jsx';
 
-function App  ()  {  
+
+function App() {
   return (
     <>
       <Navbar />
-      <Clock  classname='' />
+      <Clock className="" />
       <SplashCursor />
-      {/* <AnimatedContent /> */}
+      <Header />
+  <Orb
+  hoverIntensity={0.5}
+  rotateOnHover={true}
+  hue={0}
+  forceHoverState={false}
+  // text="Hello"
+  />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
