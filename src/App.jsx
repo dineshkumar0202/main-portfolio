@@ -4,7 +4,6 @@ import Navbar from './Components/Navbar.jsx';
 import Clock from './Components/Clock.jsx';
 import SplashCursor from './Components/SplashCursor.jsx';
 import Header from './Components/Header.jsx';
-import Orb from './Components/Orb.jsx';
 
 
 function App() {
@@ -12,15 +11,8 @@ function App() {
     <>
       <Navbar />
       <Clock className="" />
-      <SplashCursor />
+      {/* <SplashCursor /> */}
       <Header />
-  <Orb
-  hoverIntensity={0.5}
-  rotateOnHover={true}
-  hue={0}
-  forceHoverState={false}
-  // text="Hello"
-  />
     </>
   );
 }
