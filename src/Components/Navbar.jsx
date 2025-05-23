@@ -1,41 +1,34 @@
 import React, { useState } from "react";
-import Logo from "../assets/profile_logo1.png"; // Adjust path if needed
-import "../App.css";
+import { FaHome, FaUser, FaBell, FaCamera, FaSignOutAlt } from "react-icons/fa";
+import "./App.css";
 
-function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+const navItems = [
+  { icon: <FaHome />, label: "Home" },
+  { icon: <FaUser />, label: "Profile" },
+  { icon: <FaBell />, label: "Notifications" },
+  { icon: <FaCamera />, label: "Camera" },
+  { icon: <FaSignOutAlt />, label: "Logout" },
+];
 
-  const toggleMenu = () => setIsOpen(!isOpen);
-  const closeMenu = () => setIsOpen(false);
+const SidebarNavbar = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <>
-      <div className="logo-container">
-        <img src={Logo} alt="Logo" className="logo" />
-      </div>
-      
-      <nav className="navbar">
-        <button
-          className="menu-toggle"
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-          aria-expanded={isOpen}
-          aria-controls="nav-links"
-        >
-          <div className={`bar ${isOpen ? "open" : ""}`}></div>
-          <div className={`bar ${isOpen ? "open" : ""}`}></div>
-          <div className={`bar ${isOpen ? "open" : ""}`}></div>
-        </button>
-
-        <div id="nav-links" className={`nav-links ${isOpen ? "active" : ""}`}>
-          <a href="#" onClick={closeMenu}>Home</a>
-          <a href="#" onClick={closeMenu}>About</a>
-          <a href="#" onClick={closeMenu}>Services</a>
-          <a href="#" onClick={closeMenu}>Contact</a>
-        </div>
-      </nav>
-    </>
+    <div className="sidebar">
+      <ul className="nav-list">
+        {navItems.map((item, index) => (
+          <li
+            key={index}
+            className={`nav-item ${index === activeIndex ? "active" : ""}`}
+            onClick={() => setActiveIndex(index)}
+          >
+            <div className="icon">{item.icon}</div>
+            <span className="tooltip">{item.label}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
-}
+};
 
 export default Navbar;
