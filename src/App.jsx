@@ -1,18 +1,17 @@
-import React from 'react';
-import '../App.css';
-import Navbar from './Components/Navbar.jsx';
-import Clock from './Components/Clock.jsx';
-import SplashCursor from './Components/SplashCursor.jsx';
-import Header from './Components/Header.jsx';
-
+import React, { useState, useEffect } from 'react';
+import "../App.css";
+import Navbar from "./Components/Navbar.jsx";
+import Clock from "./Components/Clock.jsx";
+import SplashCursor from "./Components/SplashCursor.jsx";
+import Header from "./Components/Navbar.jsx";
 
 function App() {
   return (
     <>
       <Navbar />
-      {/* <Clock className="" /> */}
-      {/* <SplashCursor /> */}
-      {/* <Header /> */}
+      <Clock />
+      <SplashCursor />
+      <Header />
     </>
   );
 }

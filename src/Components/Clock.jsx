@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import '../App.css';
-import '../Components/script.js'
+import '../App.ccs'; 
+import '../script.js';
+
 
 const Clock = () => {
   const [time, setTime] = useState(new Date());
@@ -9,7 +10,6 @@ const Clock = () => {
     const intervalId = setInterval(() => {
       setTime(new Date());
     }, 1000);
-
     return () => clearInterval(intervalId);
   }, []);
 

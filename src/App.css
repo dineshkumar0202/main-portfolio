@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+
+.App {
+  text-align: center;
+  font-family: sans-serif;
+  padding: 20px;
+}
+
 /* Global styles */
 body {
   margin: 0;
