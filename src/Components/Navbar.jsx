@@ -1,33 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaHome, FaUser, FaBell, FaCamera, FaSignOutAlt } from "react-icons/fa";
-import "./App.css";
+import "..App.css"; 
+import logo from "../assets/logo1.png"; // Adjust the path as necessary
 
-const navItems = [
-  { icon: <FaHome />, label: "Home" },
-  { icon: <FaUser />, label: "Profile" },
-  { icon: <FaBell />, label: "Notifications" },
-  { icon: <FaCamera />, label: "Camera" },
-  { icon: <FaSignOutAlt />, label: "Logout" },
-];
-
-const SidebarNavbar = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  return (
-    <div className="sidebar">
-      <ul className="nav-list">
-        {navItems.map((item, index) => (
-          <li
-            key={index}
-            className={`nav-item ${index === activeIndex ? "active" : ""}`}
-            onClick={() => setActiveIndex(index)}
-          >
-            <div className="icon">{item.icon}</div>
-            <span className="tooltip">{item.label}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
+const Navbar = () => {
+  return ( 
+    <header className="sidebar-navbar">
+      <a className="logo" href="#">
+        <img src={logo} alt="logo" />
+      </a>
+      <nav className="navbar">
+        <a href="#home"> Home</a>
+        <a href="#about"> About</a>
+        <a href="#services"> Services</a>
+        <a href="#portfolio"> Portfolio</a>
+        <a href="#contact"> Contact</a>
+      </nav>
+    </header>
   );
 };
 

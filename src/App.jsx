@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import './App.css';
+import React from 'react';
+import '../App.css';
 import Navbar from './Components/Navbar.jsx';
 import Clock from './Components/Clock.jsx';
 import SplashCursor from './Components/SplashCursor.jsx';
@@ -10,9 +10,9 @@ function App() {
   return (
     <>
       <Navbar />
-      <Clock className="" />
+      {/* <Clock className="" /> */}
       {/* <SplashCursor /> */}
-      <Header />
+      {/* <Header /> */}
     </>
   );
 }
