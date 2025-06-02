@@ -1,21 +1,28 @@
 import React from 'react';
 import "../App.css";
 import logo from "../assets/logo.png"; 
+import home from "../assets/home-icon.png";
+import about from "../assets/about-icon.png";
+import experienec from "../assets/experience-icon.png";
+import project from "../assets/project-icon.png";
+import contact from "../assets/contact-icon.png";
 
 const Navbar = () => {
   return ( 
-    <header className="sidebar-navbar">
-      <a className="logo" href="#">
-        <img src={logo} alt="logo" />
-      </a>
-      <nav className="navbar">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
+    <aside className="sidebar-navbar">
+      <div className="logo-container">
+        {/* <a className="logo-link" href="#">
+          <img src={logo} alt="Logo" className="logo-img" />
+        </a> */}
+      </div>
+      <nav className="navbar-links">
+        <a href="#home"><img src={home} alt="home" /></a>
+        <a href="#about"><img src={about} alt="" /></a>
+        <a href="#services"><img src={experienec} alt="" /></a>
+        <a href="#portfolio"><img src={project} alt="" /></a>
+        <a href="#contact"><img src={contact} alt="" /></a>
       </nav>
-    </header>
+    </aside>
   );
 };
 
