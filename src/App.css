@@ -10,7 +10,7 @@ body {
   background-size: cover;
   background-position: center;
   min-height: 100vh;
-  background-color: white;
+  background-color: rgb(0, 0, 0);
   color: black;
 }
 
@@ -115,23 +115,29 @@ body {
 
 /* ========== Paper Header Styling ========== */
 .paper-header {
-  background: url('../assets/background-1.jpeg') no-repeat top center;
-  background-size: 100% auto; /* Stretch to full width */
-  position: relative;
+  background: url('../src/assets/background-0.png') no-repeat center center;
+  background-size: cover;
+  min-height: 100vh; /* Full screen height */
   padding: 4rem 1rem 0;
   text-align: center;
+  align-items: center;
   font-family: 'Comic Neue', 'Segoe UI', sans-serif;
   color: #222;
   overflow: hidden;
+  position: relative;
+  z-index: 0;
 }
 
 
-/* ========== Portfolio Title ========== */
+/* Title Container */
 .portfolio-title {
   position: relative;
-  z-index: 1;
+  z-index: 0;
+  top: 100px;
 }
 
+
+/* Title Text */
 .portfolio-title h1 {
   font-size: 4rem;
   font-weight: 900;
@@ -141,8 +147,57 @@ body {
   flex-wrap: wrap;
   gap: 0.4rem;
   color: #222;
+  position: relative;
+  z-index: 2;
+  line-height: 1.2;
 }
 
+/* Smiley Icon Positioned Over Text */
+.face-icon {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  z-index: 3;
+}
+
+.face-icon img {
+  position: absolute;
+  top: -10px; /* adjust vertically */
+  left: 0;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  transform: rotate(-5deg);
+  z-index: 4;
+}
+
+
+
+.cv-btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: transparent;
+  color: #000;
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0 #000; 
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  position: relative;
+  top: 20px;
+}
+
+
+.cv-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 5px rgba(100, 100, 100, 0.5);
+}
+
+
+/* Badge, Subtitle, etc remain same */
 .year-badge {
   background: white;
   border: 2px solid #000;
@@ -156,16 +211,6 @@ body {
   font-weight: 700;
 }
 
-.face-icon img {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  object-fit: cover;
-  vertical-align: middle;
-  transform: rotate(-5deg);
-  margin: 0 0.2rem;
-}
-
 .o-slice {
   font-weight: bold;
   font-family: 'Courier New', Courier, monospace;
@@ -173,7 +218,6 @@ body {
   transform: rotate(-5deg);
 }
 
-/* ========== Subtitle Below Title ========== */
 .subtitle {
   margin-top: 1rem;
   font-size: 1.1rem;
@@ -188,14 +232,7 @@ body {
   font-weight: 700;
 }
 
-/* ========== Torn Edge Image ========== */
-.torn-edge {
-  width: 100%;
-  margin-top: 2rem;
-  display: block;
-}
-
-/* ========== Responsive ========== */
+/* Responsive Fixes */
 @media (max-width: 768px) {
   .portfolio-title h1 {
     font-size: 2.5rem;
@@ -203,9 +240,15 @@ body {
     gap: 0.2rem;
   }
 
+  .face-icon {
+    width: 30px;
+    height: 30px;
+  }
+
   .face-icon img {
     width: 30px;
     height: 30px;
+    top: -6px;
   }
 
   .year-badge {
@@ -218,3 +261,82 @@ body {
     font-size: 1rem;
   }
 }
+
+
+/* ========== About Styling ========== */
+
+#about{
+  color: white;
+}
+
+
+.about-section {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #000000;
+  color: #fff;
+}
+
+.about-card {
+  display: flex;
+  flex-direction: row;
+  background-color: #000;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 900px;
+  gap: 2rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.photo-frame {
+  position: relative;
+  background: #f2f2f2;
+  padding: 1rem;
+  border: 4px solid #ccc;
+  border-radius: 8px;
+  width: 240px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.profile-pic {
+  width: 100%;
+  border-radius: 4px;
+  /* ✅ Remove grayscale */
+}
+
+.frame-label {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #000;
+}
+
+.emoji-sticker {
+  position: absolute;
+  font-size: 1.5rem;
+}
+
+.top-left {
+  top: -10px;
+  left: -10px;
+}
+
+.bottom-right {
+  bottom: -10px;
+  right: -10px;
+}
+
+.about-info {
+  flex: 1;
+}
+
+.about-info h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.about-info p {
+  line-height: 1.6;
+}
+
