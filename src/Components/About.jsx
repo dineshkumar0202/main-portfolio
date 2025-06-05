@@ -1,11 +1,20 @@
 import React from "react";
 import Im from "../assets/mee.jpg";
-
+import smiley from "../assets/yellow-smile.jpeg";
+import "../script";
 
 function About() {
   return (
     <section id="about" className="about-section">
-        <h1>About Us</h1>
+      <div className="about-titel">
+        <h1>
+          Ab
+          <span className="face-icon">
+            <img src={smiley} alt="face" />
+          </span>{" "}
+          ut Us !
+        </h1>
+      </div>
       <div className="about-card">
         {/* Left: Photo Frame */}
         <div className="photo-frame">
@@ -17,11 +26,16 @@ function About() {
 
         {/* Right: Intro Only */}
         <div className="about-info">
-          <h2>Hello <span className="emoji">!</span></h2>
+          <h2>
+            Hello <span className="emoji">!</span>
+          </h2>
           <p>
-            I'm Max Kumar, a creative web developer passionate about interactive
-            design and 3D experiences. I build fast, user-centered apps using React,
-            3.js and modern web tech.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+            inventore velit alias veritatis rerum sit pariatur modi neque
+            dignissimos quia exercitationem delectus, quae natus explicabo. Nisi
+            praesentium, rerum officia ipsa provident nam cum minus quasi quia
+            perspiciatis saepe accusantium modi iure natus! Voluptates cumque,
+            tenetur est eum delectus dolorum a.
           </p>
         </div>
       </div>

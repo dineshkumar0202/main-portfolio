@@ -8,3 +8,25 @@ const formatTime = (date) => {
     });
   };
   
+
+  // Scroll animation (fade-in effect)
+document.addEventListener("DOMContentLoaded", () => {
+  const faders = document.querySelectorAll(".scroll-fade");
+
+  const appearOptions = {
+    threshold: 0.2,
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("appear");
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+});
