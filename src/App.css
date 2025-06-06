@@ -115,7 +115,7 @@ body {
 
 /* ========== Paper Header Styling ========== */
 .paper-header {
-  background: url('../src/assets/background-0.png') no-repeat center center;
+  background: url('../src/assets/background-1.png') no-repeat center center;
   background-size: cover;
   min-height: 100vh; /* Full screen height */
   padding: 4rem 1rem 0;
@@ -151,6 +151,28 @@ body {
   z-index: 2;
   line-height: 1.2;
 }
+
+[data-speed] {
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}
+
+
+
+
+.parallax-wrapper {
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}
+
+.face-icon img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transform: rotate(-5deg);
+}
+
+
 
 /* Smiley Icon Positioned Over Text */
 .face-icon {
@@ -341,54 +363,106 @@ body {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-.photo-frame {
-  position: relative;
-  background: #f2f2f2;
-  padding: 1rem;
-  border: 4px solid #ccc;
-  border-radius: 8px;
-  width: 240px;
-  text-align: center;
-  font-weight: bold;
+.about-info  h2{
+  font-size: 50px;
+  font-weight: 500;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.profile-pic {
+.photo-frame {
+  position: relative;
+  background: #eee;
+  border: 6px solid #d3d3d3;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  background-size: cover;
+    width: 100%; /* was 260px */
+  padding: 1.2rem;
+}
+
+
+.tape-strip {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-5deg);
+  width: 100px;
+  height: 20px;
+  background: #d2b48c;
+  opacity: 0.8;
+  z-index: 10;
+}
+
+.frame-bg {
+  position: relative;
+  background: #00bdfc;
+  padding: 0.5rem;
+  border-radius: 6px;
+  z-index: 1;
+}
+
+.profile-pic.styled {
   width: 100%;
-  border-radius: 4px;
-  /* ✅ Remove grayscale */
+  height: auto;
+  /* filter: grayscale(100%); */
+  border-radius: 6px;
+  z-index: 2;
+  position: relative;
+  object-fit: cover;
+}
+
+.profile-pic.styled:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+
+.graphic-shapes .lightning {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 1.5rem;
+  color: #fff;
+  z-index: 3;
+}
+
+.orbit {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 3px solid white;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  transform: rotate(20deg);
+  z-index: 3;
+}
+
+.orbit.second {
+  transform: rotate(-30deg);
+  border-color: #fff;
 }
 
 .frame-label {
-  margin-top: 0.5rem;
   font-size: 1rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
   color: #000;
 }
 
 .emoji-sticker {
   position: absolute;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  z-index: 5;
 }
 
 .top-left {
-  top: -10px;
-  left: -10px;
+  top: -15px;
+  left: -15px;
 }
 
 .bottom-right {
-  bottom: -10px;
-  right: -10px;
+  bottom: -15px;
+  right: -15px;
 }
-
-.about-info {
-  flex: 1;
-}
-
-.about-info h2 {
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-}
-
-.about-info p {
-  line-height: 1.6;
-}
-

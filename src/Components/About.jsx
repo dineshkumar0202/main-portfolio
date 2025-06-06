@@ -1,5 +1,5 @@
 import React from "react";
-import Im from "../assets/mee.jpg";
+import Im from "../assets/mee1.jpg";
 import smiley from "../assets/yellow-smile.jpeg";
 import "../script";
 
@@ -18,10 +18,18 @@ function About() {
       <div className="about-card">
         {/* Left: Photo Frame */}
         <div className="photo-frame">
-          <img src={Im} alt="Profile" className="profile-pic" />
+          <div className="tape-strip"></div>
+          <div className="frame-bg">
+            <img src={Im} alt="Profile" className="profile-pic styled" />
+            <div className="graphic-shapes">
+              <span className="lightning">⚡</span>
+              <span className="orbit"></span>
+              <span className="orbit second"></span>
+            </div>
+          </div>
           <div className="frame-label">DK !</div>
           <div className="emoji-sticker top-left">👽</div>
-          <div className="emoji-sticker bottom-right">😎</div>
+          <div className="emoji-sticker bottom-right">😝</div>
         </div>
 
         {/* Right: Intro Only */}

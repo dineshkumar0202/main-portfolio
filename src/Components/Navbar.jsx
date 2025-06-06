@@ -16,11 +16,11 @@ const Navbar = () => {
         </a> */}
       </div>
       <nav className="navbar-links">
-        <a href="#home"><img src={home} alt="home" /></a>
-        <a href="#about"><img src={about} alt="" /></a>
-        <a href="#services"><img src={experienec} alt="" /></a>
-        <a href="#portfolio"><img src={project} alt="" /></a>
-        <a href="#contact"><img src={contact} alt="" /></a>
+        <a href="#home"><img src={home} alt="home" />Home</a>
+        <a href="#about"><img src={about} alt="" />About</a>
+        <a href="#Experiance"><img src={experienec} alt="" />Experiance</a>
+        <a href="#portfolio"><img src={project} alt="" />Project</a>
+        <a href="#contact"><img src={contact} alt="" />Contect</a>
       </nav>
     </aside>
   );
