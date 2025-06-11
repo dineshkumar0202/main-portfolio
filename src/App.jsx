@@ -5,6 +5,9 @@ import Clock from "./Components/Clock.jsx";
 import SplashCursor from "./Components/SplashCursor.jsx";
 import Header from "./Components/Header.jsx";
 import About from "./Components/About.jsx";
+import Skills from './Components/Skills.jsx';
+
+
 
 function App() {
   return (
@@ -14,6 +17,7 @@ function App() {
       {/* <SplashCursor /> */}
       <Header />
       <About />
+      <Skills />
     </>
   );
 }
