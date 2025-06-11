@@ -1,7 +1,7 @@
 import React from "react";
 import Im from "../assets/mee1.jpg";
 import smiley from "../assets/yellow-smile.jpeg";
-import "../script";
+
 
 function About() {
   return (

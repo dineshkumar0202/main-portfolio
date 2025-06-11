@@ -33,7 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-/* ========== skills  ========== */
-  
-import ReactDOM from 'react-dom/client';
-ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+
+useEffect(() => {
+  const timeout = setTimeout(() => {
+    setAnimatedSkills(initialBarSkills);
+  }, 100);
+  return () => clearTimeout(timeout);
+}, []);

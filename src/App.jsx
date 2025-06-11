@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import "./App.css";
-import Navbar from "./Components/Navbar.jsx";
-import Clock from "./Components/Clock.jsx";
-import SplashCursor from "./Components/SplashCursor.jsx";
-import Header from "./Components/Header.jsx";
-import About from "./Components/About.jsx";
-import Skills from './Components/Skills.jsx';
-
+import React from 'react';
+import './App.css';
+import Navbar from './Components/Navbar.jsx';
+import Clock from './Components/Clock.jsx';
+// import SplashCursor from './Components/SplashCursor.jsx'; // Uncomment if needed
+import Header from './Components/Header.jsx';
+import About from './Components/About.jsx';
+import Skills from './Components/Skills.jsx'; 
 
 
 function App() {
@@ -18,6 +17,7 @@ function App() {
       <Header />
       <About />
       <Skills />
+
     </>
   );
 }

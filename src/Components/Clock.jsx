@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-  
-import '../script.js';
+  import '../App.css';
+
 
 
 const Clock = () => {
