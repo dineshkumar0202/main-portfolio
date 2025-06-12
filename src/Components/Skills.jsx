@@ -1,85 +1,88 @@
-import React, { useEffect, useState } from 'react';
-import '../App.css';
+import React, { useEffect } from "react";
 
 const Skills = () => {
-  const initialBarSkills = [
-    { label: 'Three.js', value: 25 },
-    { label: 'Agular', value: 35 },
-    { label: 'Bootrap', value: 47 },
-    { label: 'Flutter', value: 69 },
-    { label: 'Vibe code', value: 86 },
-    { label: 'Github', value: 96 },
+  useEffect(() => {
+    // Animate donut numbers
+    const animatePercentage = (el) => {
+      const target = +el.dataset.target;
+      let current = 0;
+      const duration = 1000;
+      const startTime = performance.now();
+
+      function step(timestamp) {
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        current = Math.floor(progress * target);
+        el.textContent = current + "%";
+        if (progress < 1) requestAnimationFrame(step);
+      }
+
+      requestAnimationFrame(step);
+    };
+
+    document.querySelectorAll(".percentage").forEach(animatePercentage);
+  }, []);
+
+  const barSkills = [
+    { name: "Three.js", percent: 25, height: "8rem" },
+    { name: "Angular", percent: 35, height: "10.5rem" },
+    { name: "Bootstrap", percent: 47, height: "12rem" },
+    { name: "Flutter", percent: 69, height: "14.5rem" },
+    { name: "Vibe code", percent: 86, height: "17rem" },
+    { name: "Github", percent: 96, height: "19.5rem" },
   ];
 
   const donutSkills = [
-    { label: 'HTML', value: 93, color: '#e66' },
-    { label: 'CSS', value: 88, color: '#67c' },
-    { label: 'JavaScript', value: 70, color: '#cc6' },
-    { label: 'React.js', value: 78, color: '#6cf' },
+    { name: "HTML", percent: 93, color1: "#d04f4f", color2: "#eab8b8" },
+    { name: "CSS", percent: 88, color1: "#5a8a9a", color2: "#a9d1df" },
+    { name: "JavaScript", percent: 75, color1: "#d9b21a", color2: "#f0e8c9" },
+    { name: "React.js", percent: 79, color1: "#2a7aff", color2: "#a9d1df" },
   ];
 
-  const [animatedSkills, setAnimatedSkills] = useState(
-    initialBarSkills.map(skill => ({ ...skill, value: 0 }))
-  );
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setAnimatedSkills(initialBarSkills);
-    }, 100);
-    return () => clearTimeout(timeout);
-  }, []);
-
   return (
-    <div className="skills-container">
-      <h2 className="skills-title">Skills</h2>
-
-      <div className="bar-chart">
-        {animatedSkills.map((skill, index) => (
-          <div className="bar-item" key={index}>
-            <div className="bar" style={{ height: `${skill.value}%` }}>
-              <span>{skill.value}%</span>
-            </div>
-            <label>{skill.label}</label>
-          </div>
-        ))}
-      </div>
-
-      <div className="donuts-container">
-        <h3>Frontend <br />Devep</h3>
-        <div className="donuts">
-          {donutSkills.map((skill, index) => (
-            <div className="donut" key={index}>
-              <svg viewBox="0 0 36 36">
-                <circle
-                  className="bg"
-                  cx="18"
-                  cy="18"
-                  r="16"
-                  fill="none"
-                  stroke="#333"
-                  strokeWidth="4"
-                />
-                <circle
-                  className="fg"
-                  cx="18"
-                  cy="18"
-                  r="16"
-                  fill="none"
-                  stroke={skill.color}
-                  strokeWidth="4"
-                  strokeDasharray={`${skill.value}, 100`}
-                  transform="rotate(-90 18 18)"
-                />
-              </svg>
-              <div className="donut-label">
-                {skill.value}%<br />
-                <small>{skill.label}</small>
+    <main className="skills-container">
+      <section className="bar-section">
+        <h1 className="section-title">Skills</h1>
+        <div className="bar-chart">
+          {barSkills.map((skill, i) => (
+            <div className="bar-wrapper" key={i}>
+              <div
+                className="bar"
+                style={{
+                  "--bar-height": skill.height,
+                  animation: `growHeight ${1.2 + i * 0.2}s ease forwards`,
+                }}
+              >
+                <span className="bar-label">{skill.percent}%</span>
               </div>
+              <span className="bar-name">{skill.name}</span>
             </div>
           ))}
         </div>
-      </div>
-    </div>
+      </section>
+
+      <section className="donut-section">
+        <h2 className="donut-title">Frontend Developer</h2>
+        <div className="donut-wrapper">
+          {donutSkills.map((skill, i) => (
+            <div className="donut-skill" key={i}>
+              <div
+                className="donut"
+                style={{
+                  "--percentage": skill.percent,
+                  "--color1": skill.color1,
+                  "--color2": skill.color2,
+                }}
+              >
+                <span className="percentage" data-target={skill.percent}>
+                  0%
+                </span>
+              </div>
+              <span className="donut-name">{skill.name}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
   );
 };
 

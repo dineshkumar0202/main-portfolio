@@ -6,18 +6,22 @@ import Clock from './Components/Clock.jsx';
 import Header from './Components/Header.jsx';
 import About from './Components/About.jsx';
 import Skills from './Components/Skills.jsx'; 
+import Spline from '@splinetool/react-spline';
+// import ThreeBackground from './Components/ThreeBackground.jsx';
+
 
 
 function App() {
   return (
     <>
+      {/* <ThreeBackground /> */}
       <Navbar />
       <Clock />
       {/* <SplashCursor /> */}
-      <Header />
+      <Header />    
+      {/* <Spline scene="https://prod.spline.design/Mqs37QHO3Byc976G/scene.splinecode" /> */}
       <About />
       <Skills />
-
     </>
   );
 }
