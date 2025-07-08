@@ -1,23 +1,20 @@
-import React from 'react';
-import './App.css';
-import Navbar from './Components/Navbar.jsx';
-import Clock from './Components/Clock.jsx';
-// import SplashCursor from './Components/SplashCursor.jsx'; // Uncomment if needed
-import Header from './Components/Header.jsx';
-import About from './Components/About.jsx';
-import Skills from './Components/Skills.jsx'; 
-import Certificates  from './Components/Certificates.jsx';
-// import ThreeBackground from './Components/ThreeBackground.jsx';
-
-
+import React from "react";
+import Navbar from "./Components/Navbar";
+import Clock from "./Components/Clock";
+import Header from "./Components/Header";
+import About from "./Components/About";
+import Skills from "./Components/Skills";
+import Certificates from "./Components/Certificates";
+import Cursor from "./Components/Cursor";
+import "./App.css";
 
 function App() {
   return (
     <>
+      <Cursor />
       <Navbar />
       <Clock />
-      {/* <SplashCursor /> */}
-      <Header />    
+      <Header />
       <About />
       <Skills />
       <Certificates />

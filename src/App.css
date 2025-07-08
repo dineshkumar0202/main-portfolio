@@ -1,3 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Poppins:wght@400;600&display=swap');
+
+/* Cursor.css */
+.neon-cursor-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.cursor-main {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  z-index: 10;
+}
+
+.cursor-trail {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #ec6517;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 5;
+}
+
+.cursor-glow {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 140, 0, 0.2);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+}
+
+
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -319,8 +359,9 @@ body {
   display: flex;
   flex-direction: column; /* stack title and card vertically */
   align-items: center;     /* center horizontally */
-  padding: 4rem 2rem;
+  padding: 4rem 2rem; 
   background-color: #000;
+  /* background: linear-gradient(to top, #7c4197, #000000); */
   color: #fff;
   scroll-margin-top: 100px; /* for smooth scroll anchoring */
 
@@ -519,13 +560,13 @@ body {
 
 
 .skills-section {
-  position: relative;
-  height: 500px;
+  position: absolute;
+  height: 650px;
   background: #000;
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
-  right: 30%;
+  right: 80%;
   animation: appear linear;
   animation-timeline: view();
   animation-range: entry 0% cover 50%;
@@ -548,8 +589,8 @@ body {
 }
 
 .skill-icon img {
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   transition: transform 0.3s ease;
 }
 .skills-header{
@@ -578,10 +619,8 @@ body {
 
 
 /* ========== Certificates Page Styling ========== */
-
 body {
-  margin: 0;
-  padding: 0;
+ 
   font-family: 'Indie Flower', cursive;
 }
 
@@ -596,41 +635,42 @@ body {
   animation: appear linear;
   animation-timeline: view();
   animation-range: entry 0% cover 50%;
+  margin-left: 40%;
 }
 
 .cert-title {
   color: white;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
   user-select: none;
 }
 
 .cert-book {
   display: flex;
-  gap: 1.5rem;
-  max-width: 1280px;
-  width: 100%;
+  gap: 1rem;
+  max-width: 100%;
   justify-content: center;
-  perspective: 1200px;
+  perspective: 1000px;
+  flex-wrap: wrap;
 }
 
 .cert-pages-wrapper {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   position: relative;
 }
 
 .cert-page {
   background-color: white;
-  border: 4px solid #6B6993;
-  border-radius: 0.75rem;
-  width: 320px;
-  height: 384px;
+  border: 3px solid #6B6993;
+  border-radius: 0.5rem;
+  width: 240px; /* Smaller width */
+  height: 300px; /* Smaller height */
   position: relative;
-  padding: 4rem 2.5rem 2.5rem;
-  box-shadow: inset 0 0 0 4px #6B6993;
+  padding: 3rem 1.5rem 1.5rem;
+  box-shadow: inset 0 0 0 3px #6B6993;
   backface-visibility: hidden;
-  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1), opacity 0.6s;
+  transition: transform 0.6s ease, opacity 0.6s;
   opacity: 1;
 }
 
@@ -643,15 +683,15 @@ body {
 
 .cert-page.left h2 {
   color: black;
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
   user-select: none;
 }
 
 .cert-page.left p {
   color: black;
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-size: 0.8rem;
+  line-height: 1.4;
   user-select: none;
 }
 
@@ -662,8 +702,8 @@ body {
 }
 
 .cert-page.right img {
-  max-width: 320px;
-  max-height: 220px;
+  max-width: 260px;
+  max-height: 260px;
   object-fit: contain;
 }
 
@@ -672,10 +712,10 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 1.5rem;
+  height: 1.2rem;
   background-color: white;
   border-top: 2px solid #6B6993;
-  border-radius: 0 0 0.75rem 0.75rem;
+  border-radius: 0 0 0.5rem 0.5rem;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%, 0 90%);
 }
 
@@ -683,32 +723,32 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
 .spiral-hole {
-  width: 1rem;
-  height: 1.5rem;
+  width: 0.8rem;
+  height: 1.2rem;
   border: 2px solid #333;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   border-radius: 9999px;
 }
 
 .nav-arrows {
-  margin-top: 2.5rem;
+  margin-top: 2rem;
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   color: white;
-  font-size: 2rem;
+  font-size: 1.8rem;
   user-select: none;
 }
 
-@keyframes appear{
-  from{
+@keyframes appear {
+  from {
     opacity: 0;
     scale: 0.5;
   }
-  to{
+  to {
     opacity: 1;
     scale: 1;
   }

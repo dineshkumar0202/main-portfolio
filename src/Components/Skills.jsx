@@ -38,7 +38,7 @@ const Skills = () => {
   return (
     <div className="skills-section">
       <div className="skills-header">
-        <h2>My Skills</h2>
+        {/* <h2>Skills</h2> */}
       </div>
       <div className="arrow-indicator" />
       <div className="skills-wheel">
