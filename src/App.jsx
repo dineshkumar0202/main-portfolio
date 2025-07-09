@@ -6,6 +6,7 @@ import About from "./Components/About";
 import Skills from "./Components/Skills";
 import Certificates from "./Components/Certificates";
 import Cursor from "./Components/Cursor";
+import Projects from "./Components/project.jsx";
 import "./App.css";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <About />
       <Skills />
       <Certificates />
+      <Projects />
     </>
   );
 }
