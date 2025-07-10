@@ -36,7 +36,7 @@ const Skills = () => {
   }, []);
 
   return (
-    <div className="skills-section">
+    <div className="skills-section" id='skills'>
       <div className="skills-header">
          <h2>Skills</h2> 
       </div>

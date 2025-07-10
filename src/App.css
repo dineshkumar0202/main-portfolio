@@ -35,7 +35,9 @@
   position: absolute;
   z-index: 1;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 
 
 body {
@@ -47,6 +49,7 @@ body {
   min-height: 100vh;
   background-color: rgb(0, 0, 0);
   color: black;
+
 }
 
 
@@ -178,6 +181,7 @@ body {
 
 /* ========== Paper Header Styling ========== */
 .paper-header {
+  height: 100vh;
   background: url('../src/assets/background-1.png') no-repeat center center;
   background-size: cover;
   min-height: 100vh; /* Full screen height */
@@ -352,6 +356,7 @@ body {
 
 #about{
   color: white;
+    height: 100vh;
 }
 
 
@@ -361,9 +366,11 @@ body {
   align-items: center;     /* center horizontally */
   padding: 4rem 2rem; 
   background-color: #000;
-  /* background: linear-gradient(to top, #7c4197, #000000); */
   color: #fff;
-  scroll-margin-top: 100px; /* for smooth scroll anchoring */
+  scroll-margin-top: 100px; 
+   animation: appear  linear; 
+  animation-timeline: view();
+  animation-range: entry 0% cover 50%;
 
 }
 .about-section h1 {
@@ -542,11 +549,11 @@ body {
     scale: 1;
   }
 }
-.about-card{
+/* .about-card{
   animation: appear  linear; 
   animation-timeline: view();
   animation-range: entry 0% cover 50%;
-}
+} */
 
 
 
@@ -560,6 +567,7 @@ body {
 
 
 .skills-section {
+    height: 100vh;
   position: absolute;
   height: 650px;
   background: #000;
@@ -702,8 +710,8 @@ body {
 }
 
 .cert-page.right img {
-  max-width: 260px;
-  max-height: 260px;
+  max-width: 220px;
+  max-height: 220px;
   object-fit: contain;
 }
 
@@ -817,46 +825,95 @@ body {
 }
 
 .projects-container {
+  height: 100vh;
   padding: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 50%;
 }
 
-.projects-title {
-  font-size: 36px;
-  margin-bottom: 40px;
-  text-align: center;
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
 }
+
+.project-title h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 0.4rem;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Wraps the image inline with the text */
+.projects-container h1 .face-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: 0 0.2rem;
+}
+
+.project-title h1 .face-icon img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  transform: rotate(-5deg);
+  z-index: 4;
+  position: relative;
+}
+
 
 .projects-wrapper {
+  padding-top: 40px;
   display: flex;
-  gap: 40px;
+  gap: 150px;
   max-width: 1200px;
   width: 100%;
   justify-content: center;
 }
 
 .sidebar {
+  padding-top: 60px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  width: 180px;
+  gap: 40px;
+  width: 130px;
 }
 
 .filter-btn {
   padding: 10px 15px;
-  border-radius: 16px;
+  border: 2px solid #ebebeb;
+  border-radius: 12px;
   background-color: #d3d3d3;
   color: black;
-  border: none;
   font-size: 16px;
   cursor: pointer;
   transition: background 0.3s;
   text-align: center;
 }
 .filter-btn.active {
-  background-color: fuchsia;
+  background: linear-gradient(to left, #d3d3d3, #9f10ff);
 
 }
 
@@ -866,9 +923,10 @@ body {
 }
 
 .filter-btn.active {
-  background-color: fuchsia;
+  background: linear-gradient(to right, #000000, #cb10ff);
   color: white;
   font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .projects-grid {
@@ -880,8 +938,43 @@ body {
     "h f g";
   grid-template-columns: repeat(4, 160px);
   grid-auto-rows: 120px;
-  gap: 10px;
+  gap: 5px;
   align-items: stretch;
+  
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-link {
+  background-color: fuchsia;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.project-link:hover {
+  background-color: deeppink;
 }
 
 

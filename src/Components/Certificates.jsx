@@ -8,7 +8,7 @@ const certificatePages = [
     heading: 'CubeAi Solution Pvt Ltd',
     text: `Heardeing the certificate of 2020
 and the completed the corees`,
-    img: { src: C1, alt: 'Certificate 2020' },
+    img: { src: C1, alt: 'Certificate 2020', live: 'https://drive.google.com/drive/u/1/home' },
   },
   {
     heading: 'Pinacal',
@@ -98,7 +98,7 @@ const Certificates = () => {
       : '');
 
   return (
-    <div className="cert-body">
+    <div className="cert-body" id='certificates'>
       <h1 className="cert-title">Certificates</h1>
       <div className="cert-book">
         <div className="cert-pages-wrapper">
