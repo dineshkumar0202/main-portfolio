@@ -1053,3 +1053,203 @@ body {
     grid-area: unset !important;
   }
 }
+
+
+/* Social Links */
+
+
+
+.social-section {
+  min-height: 100vh;
+  padding: 80px 20px;
+  background: #000000;
+  color: white;
+
+  /* NEW: Enable 3D perspective */
+  perspective: 1200px;
+  perspective-origin: center;
+}
+
+
+.social-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.social-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.social-header h1 {
+  font-size: 3rem;
+  background: linear-gradient(to right, cyan, violet);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+.social-header p {
+  color: #ccc;
+  font-size: 1.2rem;
+}
+
+.social-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  margin-bottom: 40px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  padding: 30px;
+}
+
+@media (min-width: 768px) {
+  .social-card {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.card-left {
+  flex: 1;
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.icon-box {
+  padding: 16px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+
+.username {
+  color: #aaa;
+  font-family: monospace;
+}
+
+.external-link {
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.desc {
+  color: #ccc;
+  margin-bottom: 16px;
+}
+
+.stats-row {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  color: cyan;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.badge strong {
+  color: lightgreen;
+  margin-left: 4px;
+}
+
+.card-right {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.cta p {
+  color: #aaa;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.cta-button {
+  padding: 10px 20px;
+  border-radius: 9999px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+/* Platform-specific gradients */
+.linkedin {
+  background: linear-gradient(to right, #2563eb, #1e40af);
+}
+
+.github {
+  background: linear-gradient(to right, #374151, #111827);
+}
+
+.twitter {
+  background: linear-gradient(to right, #60a5fa, #1e3a8a);
+}
+
+.youtube {
+  background: linear-gradient(to right, #ef4444, #b91c1c);
+}
+
+.instagram {
+  background: linear-gradient(to right, #ec4899, #8b5cf6);
+}

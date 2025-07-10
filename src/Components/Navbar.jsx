@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../App.css";
 import logo from "../assets/logo.png";
 import home from "../assets/home-icon.png";
@@ -40,10 +41,12 @@ const Navbar = () => {
           <img src={project} alt="projects" />
           <span className="nav-text">Project</span>
         </a>
-        <a href="#social">
+
+        <Link to="/social">
           <img src={social} alt="social" />
           <span className="nav-text">Social</span>
-        </a>
+        </Link>
+
         <a href="#contact">
           <img src={contact} alt="contact" />
           <span className="nav-text">Contact</span>
