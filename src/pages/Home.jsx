@@ -7,6 +7,7 @@ import Skills from "../Components/Skills";
 import Certificates from "../Components/Certificates";
 import Cursor from "../Components/Cursor";
 import Projects from "../Components/Projects.jsx";
+import Contact from "../Components/Contact.jsx";
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <Skills />
       <Certificates />
       <Projects />
+      <Contact />
     </div>
   );
 };
